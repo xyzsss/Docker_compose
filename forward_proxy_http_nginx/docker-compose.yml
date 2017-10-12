@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nginx:
+    restart: unless-stopped
+    image: nginx
+    ports:
+     - "8088:8088"
+    volumes:
+     - ./nginx_conf/nginx.conf:/etc/nginx/conf.d/proxy.conf
+     - ./log/proxy.log:/var/log/nginx/proxy.log

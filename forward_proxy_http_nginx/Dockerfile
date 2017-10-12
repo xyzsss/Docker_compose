@@ -1,1 +1,1 @@
-Dockerfile
+FROM nginx:latest
