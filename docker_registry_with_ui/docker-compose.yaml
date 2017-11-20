@@ -1,0 +1,26 @@
+version: '3'
+services:
+  my-registry:
+      restart: unless-stopped
+      image: registry:latest
+      volumes:
+        - /data/storage/registry:/var/lib/registry
+      environment:
+        FORCE_SSL: 'true'
+        VIRTUAL_HOST: '*:5555, https://*:5555'
+        REGISTRY_HTTP_SECRET: 'dXWOGobJypiDnN6W'
+      #ports:
+      #  - "5555:5000"
+      expose:
+        - 5555
+  registry-ui:
+      restart: unless-stopped
+      image: docker-registry-frontend:v2
+      environment:
+         ENV_DOCKER_REGISTRY_HOST: 'localhost'
+         ENV_DOCKER_REGISTRY_PORT: "5555"
+      links:
+         - my-registry
+      expose:
+        - 8555
+
