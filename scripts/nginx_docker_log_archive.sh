@@ -13,7 +13,7 @@
 #   Created: 2017-10-20
 #   Author: Mike
 #   Post-History: 2017-10-20 init
-# 				  2017-11-22 enable for docker
+# 		  2017-11-22 enable for docker
 #   -----------------------------------------------------------
 
 OPLOG="/var/log/nginx/nginx_docker_log_archive.log"
