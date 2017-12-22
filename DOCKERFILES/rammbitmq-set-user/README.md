@@ -12,5 +12,5 @@
 
 
 ### Test
-Visit by  http://IP_ADDRESS:15672/
+Visit by  http://IP_ADDRESS:15672/ with `user@password` to Login if `Dockerfile` not changed.
 
